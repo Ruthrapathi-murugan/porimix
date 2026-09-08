@@ -8,12 +8,13 @@ export default function SpecialsSection({ images }) {
     <section id="specials" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-brand-dark mb-4">Customer Favourites 🔥</h2>
+          <p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Porimix favourites</p>
+          <h2 className="brand-display text-5xl md:text-6xl text-brand-dark mb-4">Can&apos;t stop.<br />Won&apos;t stop.</h2>
           <div className="w-24 h-1 bg-brand-red mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
+            {[
             { name: "Egg Masal Pori", price: 40, img: images.eggChaat },
             { name: "Cheese Masal Pori", price: 50, img: images.hero },
             { name: "Paneer Masal Pori", price: 50, img: images.eggChaat },

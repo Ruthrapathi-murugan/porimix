@@ -1,9 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
-import MobileBottomBar from "../components/MobileBottomBar";
-import MenuSection from "../components/MenuSection";
-import SpecialsSection from "../components/SpecialsSection";
+import FormsparkForm from "../components/FormsparkForm";
 
 export default function Home() {
   const images = {
@@ -12,170 +10,69 @@ export default function Home() {
     murukku: "/images/new_murukku_settu_1785477910530.png",
     norukkal: "/images/new_tattu_murukku_1785477920539.png",
   };
-
-  const whatsappLink = "https://wa.me/917010760433?text=Hi%20Porimix!%20I%20would%20like%20to%20place%20an%20order.%20Please%20share%20today's%20available%20menu.";
+  const whatsappLink = "https://wa.me/917010760433?text=Hi%20Porimix!%20I%20would%20like%20to%20place%20an%20order.";
 
   return (
-    <main className="relative bg-brand-light">
+    <main className="relative overflow-hidden bg-brand-light">
       <Header />
-
-      {/* HERO SECTION */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-yellow/90 to-brand-orange/80 mix-blend-multiply z-10"></div>
-          <img
-            src={images.hero}
-            alt="Delicious Masal Pori"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 drop-shadow-lg">
-            Palani's Crunchiest <br /> Pori Mix!
-          </h1>
-          <p className="mt-4 text-xl md:text-2xl text-white font-medium mb-10 drop-shadow-md">
-            Fresh • Spicy • Crunchy • Made to Order
-          </p>
-          <p className="mt-2 max-w-2xl mx-auto text-lg text-white mb-10 drop-shadow-md">
-            Enjoy delicious Masal Pori, Murukku Settu, Norukkal and more at Porimix, Palani.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#menu" className="bg-white text-brand-orange hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-transform transform hover:scale-105 shadow-xl">
-              View Our Menu
-            </a>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-500 text-white hover:bg-green-600 px-8 py-4 rounded-full font-bold text-lg transition-transform transform hover:scale-105 shadow-xl flex items-center justify-center gap-2">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" /></svg>
-              Order on WhatsApp
-            </a>
-          </div>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 text-white font-medium">
-            <span className="flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full">✨ Freshly Prepared</span>
-            <span className="flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full">💰 Pocket-Friendly</span>
-            <span className="flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full">🌶️ Lots of Varieties</span>
-            <span className="flex items-center gap-2 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full">📍 Local Favourite</span>
-          </div>
+      <section id="home" className="relative bg-brand-yellow pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div className="absolute inset-0 z-0"><div className="absolute inset-0 bg-brand-yellow/65 z-10" /><img src={images.hero} alt="Fresh Porimix masal pori" className="w-full h-full object-cover opacity-60 mix-blend-screen" /></div>
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+          <div><p className="inline-flex bg-brand-yellow text-brand-dark px-4 py-2 font-black uppercase tracking-[.2em] text-xs brand-sticker">Palani&apos;s favourite snack stop</p><h1 className="mt-7 mb-7"><img src="/images/logo.jpeg" alt="Porimix" className="w-full max-w-[620px] bg-brand-yellow" /></h1><p className="max-w-xl text-xl md:text-2xl text-white font-bold leading-tight mb-9">Fresh, spicy, crunchy and mixed just the way you like it.</p><div className="flex flex-wrap gap-4"><a href="#menu" className="bg-brand-yellow text-brand-dark hover:bg-white px-7 py-4 font-black uppercase tracking-wide transition-transform hover:-translate-y-1 brand-sticker">Explore menu</a><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-brand-red px-7 py-4 font-black uppercase tracking-wide transition-colors">Order now</a></div></div>
+          <div className="relative hidden lg:block"><div className="absolute -top-12 -right-3 bg-brand-yellow text-brand-dark w-32 h-32 rounded-full flex items-center justify-center text-center font-black uppercase leading-none rotate-12 brand-sticker">Fresh<br />&amp;<br />crunchy</div><img src={images.eggChaat} alt="Signature Porimix snack" className="w-full aspect-square object-cover border-[10px] border-white shadow-[14px_14px_0_#181818] rotate-3" /></div>
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-brand-dark mb-6">Crunchy Happiness in Every Bite</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Porimix brings Palani a delicious selection of freshly prepared Pori Mix, Masal Pori, Murukku Settu, Tattu Murukku and Norukkal varieties. From classic spicy flavours to Egg, Paneer and Cheese combinations, there's something for every snack lover.
-            </p>
+      <section id="about" className="py-20 bg-brand-red text-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-end"><div><p className="text-white font-black uppercase tracking-[.25em] text-sm mb-4">About Porimix</p><h2 className="brand-display text-5xl md:text-7xl text-white">Simple snack.<br />Big flavour!</h2></div><div><p className="text-xl md:text-2xl font-bold leading-snug max-w-3xl">Porimix brings Palani a delicious selection of freshly prepared street snacks, mixed with bold masala and plenty of crunch.</p><p className="mt-5 text-lg max-w-2xl">From classic Masal Pori to Murukku Settu, Tattu Murukku and Norukkal, every serving is made fresh for your next tasty break.</p></div></div><div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-14">{[["100%", "Freshly prepared"], ["4+", "Snack varieties"], ["Daily", "Made to order"], ["₹20", "Starting price"]].map(([number, label]) => <div key={label} className="border-t-4 border-white pt-4"><strong className="brand-display text-4xl md:text-5xl block">{number}</strong><span className="font-bold">{label}</span></div>)}</div><div className="mt-16 grid md:grid-cols-[.75fr_1.25fr] gap-8 items-center bg-white p-5 sm:p-8 brand-sticker text-brand-dark"><div className="aspect-square max-w-sm w-full mx-auto overflow-hidden border-4 border-brand-dark bg-brand-light"><img src="/images/founder-vigneshwaran.jpg" alt="Vigneshwaran B, Founder and CEO of Porimix" className="w-full h-full object-cover" /></div><div><p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Meet the founder</p><h3 className="brand-display text-4xl md:text-6xl text-brand-dark mb-4">Vigneshwaran B</h3><p className="text-brand-red font-black uppercase tracking-wide mb-5">Founder &amp; CEO</p><p className="text-lg md:text-xl leading-relaxed text-gray-700">With a passion for bold local flavours and a vision to make every snack memorable, Vigneshwaran B leads Porimix with freshness, creativity and a deep love for Palani&apos;s food culture.</p></div></div></div></section>
+
+      <section id="products" className="py-16 md:py-24 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="text-center mb-10"><p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Our products</p><h2 className="brand-display text-5xl md:text-7xl text-brand-dark">Traditional taste.<br />Made fresh.</h2></div><div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">{[{ name: "Pori Mix", image: images.hero }, { name: "Masala Pori", image: images.eggChaat }, { name: "Mixture", image: images.murukku }, { name: "Omapodi", image: images.norukkal }, { name: "Masala Peanuts", image: images.murukku }, { name: "Banana Chips", image: images.eggChaat }].map((product) => <article key={product.name} className="group overflow-hidden rounded-xl border border-brand-dark/10 bg-brand-light shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all"><div className="aspect-square overflow-hidden"><img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-110" /></div><div className="p-3 text-center"><h3 className="font-black text-sm sm:text-base">{product.name}</h3><a href="#contact" className="mt-3 inline-block bg-brand-dark text-white px-3 py-2 text-[10px] font-black uppercase hover:bg-brand-red">Enquire</a></div></article>)}</div></div></section>
+
+      <section id="why-porimix" className="min-h-screen flex items-center py-16 md:py-20 bg-brand-dark text-white"><div className="w-full px-4 sm:px-6 lg:px-8"><div className="text-center mb-10"><p className="text-brand-yellow font-black uppercase tracking-[.25em] text-sm mb-3">Why choose Porimix?</p><h2 className="brand-display text-5xl md:text-7xl">Made with care.<br />Loved by all.</h2></div><div className="grid grid-cols-2 md:grid-cols-5 gap-5">{[["🌿", "100% Natural", "No artificial colours, flavours or chemicals"], ["🛡️", "Quality Assured", "Strict quality checks at every step"], ["💧", "Fresh & Crispy", "Perfect blend of taste and crunch"], ["📦", "Safe Packaging", "Packed in hygienic and safe material"], ["♥", "Loved by All", "Preferred choice of our customers"]].map(([icon, title, text]) => <div key={title} className="text-center border-t-2 border-brand-yellow pt-5 hover:-translate-y-2 transition-transform"><div className="text-3xl mb-3">{icon}</div><h3 className="text-brand-yellow font-black text-sm sm:text-base">{title}</h3><p className="text-xs text-gray-300 mt-2 leading-relaxed">{text}</p></div>)}</div></div></section>
+
+      <section id="gallery" className="py-16 md:py-20 bg-brand-light"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="flex items-end justify-between gap-4 mb-8"><div><p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Porimix gallery</p><h2 className="brand-display text-5xl md:text-7xl text-brand-dark">See the<br />crunch.</h2></div><a href="#contact" className="hidden sm:inline-block bg-brand-red text-white px-5 py-3 font-black uppercase text-sm hover:bg-brand-dark">More photos</a></div><div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-5">{[images.hero, images.eggChaat, images.murukku, images.norukkal, images.eggChaat].map((image, index) => <div key={`${image}-${index}`} className={`overflow-hidden rounded-xl border-2 border-brand-dark/10 ${index === 0 ? "md:col-span-2 md:row-span-2" : ""}`}><img src={image} alt={`Porimix gallery ${index + 1}`} className="w-full h-full min-h-32 object-cover hover:scale-105" /></div>)}</div></div></section>
+
+      <section id="franchise" className="py-16 md:py-24 bg-brand-red text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[.85fr_1.15fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <p className="text-brand-yellow font-black uppercase tracking-[.25em] text-sm mb-4">Grow with Porimix</p>
+            <h2 className="brand-display text-5xl md:text-7xl mb-6">Bring the<br /><span className="text-brand-yellow">crunch</span><br />to your city.</h2>
+            <p className="text-lg md:text-xl font-medium leading-relaxed max-w-lg">Join Porimix and bring fresh, spicy street snacks to more food lovers. Tell us about yourself and our team will get in touch.</p>
+            <div className="mt-8 grid grid-cols-2 gap-4 max-w-sm"><div className="border-t-2 border-white/50 pt-3"><strong className="text-2xl font-black block">Fresh</strong><span className="text-sm text-white/75">Daily snack culture</span></div><div className="border-t-2 border-white/50 pt-3"><strong className="text-2xl font-black block">Local</strong><span className="text-sm text-white/75">Built for your market</span></div></div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Fresh Ingredients", icon: "🌱", desc: "We use only the freshest onions, coriander, and spices." },
-              { title: "Made to Order", icon: "🍳", desc: "Every snack is mixed right in front of you." },
-              { title: "Affordable Prices", icon: "₹", desc: "Delicious taste that's easy on the wallet." },
-              { title: "Multiple Varieties", icon: "🌶️", desc: "From classic to cheese and paneer fusions." },
-            ].map((feature, i) => (
-              <div key={i} className="bg-brand-light p-8 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300 shadow-sm hover:shadow-md">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-brand-dark mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
+          <FormsparkForm formId="franchise" className="bg-white text-brand-dark p-5 sm:p-8 md:p-10 brand-sticker grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <h3 className="sm:col-span-2 text-2xl md:text-3xl font-black">Start your franchise enquiry</h3>
+            <p className="sm:col-span-2 text-gray-600 mb-2">Share your details and we&apos;ll call you back.</p>
+            <label className="flex flex-col gap-2 font-bold text-sm">Full name<input required type="text" name="name" placeholder="Your name" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Phone number<input required type="tel" name="phone" placeholder="10-digit mobile number" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Email address<input required type="email" name="email" placeholder="you@example.com" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Preferred city<input required type="text" name="city" placeholder="City or town" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="sm:col-span-2 flex flex-col gap-2 font-bold text-sm">Tell us about your investment plan<select required name="investment_plan" defaultValue="" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red"><option value="" disabled>Select an option</option><option>Under ₹5 lakhs</option><option>₹5–10 lakhs</option><option>Above ₹10 lakhs</option></select></label>
+            <button type="submit" className="sm:col-span-2 bg-brand-yellow hover:bg-brand-orange px-6 py-4 font-black uppercase tracking-wide transition-colors">Submit enquiry</button>
+          </FormsparkForm>
         </div>
       </section>
 
-      <MenuSection images={images} />
-
-      <SpecialsSection images={images} />
-
-      {/* GALLERY SECTION */}
-      <section id="gallery" className="py-20 bg-brand-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold mb-4">Food Gallery</h2>
-            <div className="w-24 h-1 bg-brand-yellow mx-auto rounded-full"></div>
+      <section id="location" className="py-20 bg-white"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="text-center mb-12"><p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Visit Porimix</p><h2 className="brand-display text-5xl md:text-6xl text-brand-dark mb-4">Come hungry.<br />Leave crunchy.</h2></div><div className="grid grid-cols-1 md:grid-cols-3 gap-8">{[{ name: "Main Branch", address: "Kumaran Department Store, 11, Red Cross Rd, Anna Nagar, Palani – 624601", mapUrl: "https://maps.app.goo.gl/sxpwZnWjwCEQ3LCt6", embedUrl: "https://www.google.com/maps?q=10.4531097,77.5102088&z=16&output=embed" }, { name: "Branch 2", address: "Porimix, Palani, Tamil Nadu.", mapUrl: "https://maps.app.goo.gl/RaUey2y8HfGaFMpEA", embedUrl: "https://www.google.com/maps?q=10.447745,77.532953&z=16&output=embed" }, { name: "Branch 3", address: "Porimix, Palani, Tamil Nadu.", mapUrl: "https://maps.app.goo.gl/gojcLBZjFJWMUHNUA", embedUrl: "https://www.google.com/maps?q=10.450578,77.516828&z=16&output=embed" }].map((loc) => <div key={loc.name} className="bg-brand-light p-6 brand-sticker flex flex-col h-full"><div className="mb-3 text-3xl">📍</div><h3 className="text-2xl font-black text-brand-dark mb-3">{loc.name}</h3><p className="text-gray-700 mb-5">{loc.address}</p><iframe src={loc.embedUrl} className="w-full h-56 mb-5 border-2 border-brand-dark" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title={`${loc.name} map`} /><a href={loc.mapUrl} target="_blank" rel="noopener noreferrer" className="bg-brand-red text-white px-4 py-3 font-bold text-center hover:bg-brand-dark transition-colors">Open in Maps</a></div>)}</div></div></section>
+      <section id="contact" className="py-16 md:py-24 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-4">Get in touch</p>
+            <h2 className="brand-display text-5xl md:text-7xl text-brand-dark mb-6">Let&apos;s talk<br />snacks.</h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-md">Have a question, feedback, or want to know more about Porimix? Send us a message and our team will get back to you.</p>
+            <div className="mt-8 space-y-4 font-bold"><a href="tel:+917010760433" className="block text-brand-red hover:text-brand-dark">07010760433</a><p>Kumaran Department Store, 11, Red Cross Rd, Anna Nagar, Palani – 624601</p></div>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-            <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden group relative">
-              <img src={images.hero} alt="Gallery 1" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                <span className="text-xl font-bold text-brand-yellow">Masal Pori Varieties</span>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden group relative">
-              <img src={images.murukku} alt="Gallery 2" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-lg font-bold text-white">Murukku Settu</span>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden group relative">
-              <img src={images.eggChaat} alt="Gallery 3" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-lg font-bold text-brand-yellow">Egg Fusions</span>
-              </div>
-            </div>
-            <div className="col-span-2 rounded-2xl overflow-hidden group relative">
-              <img src={images.norukkal} alt="Gallery 4" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-lg font-bold text-white">Norukkal Specials</span>
-              </div>
-            </div>
-          </div>
+          <FormsparkForm formId="contact" className="bg-white p-5 sm:p-8 md:p-10 brand-sticker grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <h3 className="sm:col-span-2 text-2xl md:text-3xl font-black text-brand-dark">Contact Porimix</h3>
+            <label className="flex flex-col gap-2 font-bold text-sm">Full name<input required type="text" name="name" placeholder="Your name" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Email address<input required type="email" name="email" placeholder="you@example.com" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Phone number<input type="tel" name="phone" placeholder="Your phone number" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="flex flex-col gap-2 font-bold text-sm">Subject<input required type="text" name="subject" placeholder="How can we help?" className="border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <label className="sm:col-span-2 flex flex-col gap-2 font-bold text-sm">Your message<textarea required name="message" rows={5} placeholder="Write your message here..." className="resize-y border-2 border-gray-200 px-4 py-3 font-normal outline-none focus:border-brand-red" /></label>
+            <button type="submit" className="sm:col-span-2 bg-brand-red text-white hover:bg-brand-dark px-6 py-4 font-black uppercase tracking-wide transition-colors">Send message</button>
+          </FormsparkForm>
         </div>
       </section>
-
-      {/* LOCATION SECTION */}
-      <section id="location" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-extrabold text-brand-dark mb-4">Visit Our 3 Locations in Palani</h2>
-            <div className="w-24 h-1 bg-brand-orange mx-auto rounded-full"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              { name: "Main Branch", address: "Kumaran Department Store, 11, Red Cross Rd, Opposite Palani, Anna Nagar, Palani – 624601", mapQuery: "Kumaran+Department+Store,Palani,Tamil+Nadu" },
-              { name: "Branch 2", address: "Please update your exact branch 2 address here, Palani, Tamil Nadu", mapQuery: "Palani,Tamil+Nadu" },
-              { name: "Branch 3", address: "Please update your exact branch 3 address here, Palani, Tamil Nadu", mapQuery: "Palani,Tamil+Nadu" },
-            ].map((loc, i) => (
-              <div key={i} className="bg-brand-light p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
-                <div className="mb-4 text-3xl">📍</div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-3">{loc.name}</h3>
-                <p className="text-gray-700 flex-1 mb-6">{loc.address}</p>
-                <div className="flex flex-wrap gap-3 mt-auto">
-                  <a href={`https://maps.google.com/?q=${loc.mapQuery}`} target="_blank" rel="noopener noreferrer" className="bg-brand-dark text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition-colors shadow-sm text-center flex-1">
-                    Get Directions
-                  </a>
-                  <a href="tel:+917010760433" className="bg-white border-2 border-brand-orange text-brand-orange px-4 py-2 rounded-full font-bold text-sm hover:bg-brand-orange hover:text-white transition-colors shadow-sm text-center flex-1">
-                    Call Now
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-gray-200">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0232230491866!2d77.5140813!3d10.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDI3JzAwLjAiTiA3N8KwMzAnNTAuNyJF!5e0!3m2!1sen!2sin!4v1650000000000!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Porimix Location"
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-      <FloatingWhatsApp />
-      <MobileBottomBar />
+      <Footer /><FloatingWhatsApp />
     </main>
   );
 }

@@ -27,7 +27,7 @@ export default function MenuSection({ images }) {
 
   const categories = [
     {
-      title: "MASAL PORI (KARAM)",
+              title: "MASAL PORI (KARAM)",
       image: images.eggChaat,
       baseIngredients: ["Puffed Rice (Pori)", "Red Onion", "Secret Masala", "Coriander Leaves", "Roasted Peanuts", "Lemon Drops"],
       items: [
@@ -36,13 +36,12 @@ export default function MenuSection({ images }) {
         { name: "Tomato Masal Pori", price: 30 },
         { name: "Garlic Masal Pori", price: 30 },
         { name: "Mango Masal Pori", price: 30 },
-        { name: "Bundi Masal Pori", price: 30 },
         { name: "Paneer Masal Pori", price: 50 },
         { name: "Cheese Masal Pori", price: 50 },
       ]
     },
     {
-      title: "TATTU MURUKKU SETTU",
+              title: "TATTU MURUKKU SETTU",
       image: images.norukkal,
       baseIngredients: ["Tattu Murukku (Flat Puri)", "Shredded Carrot", "Shredded Beetroot", "Special Spices", "Green Chutney", "Onion Rings"],
       items: [
@@ -60,7 +59,7 @@ export default function MenuSection({ images }) {
       ]
     },
     {
-      title: "MURUKKU SETTU VARIETIES",
+              title: "MURUKKU SETTU VARIETIES",
       image: images.murukku,
       baseIngredients: ["Crispy Spiral Murukku", "Shredded Carrot", "Shredded Beetroot", "Red Masala Powder", "Curry Leaves", "Onion"],
       items: [
@@ -78,7 +77,7 @@ export default function MenuSection({ images }) {
       ]
     },
     {
-      title: "NORUKKAL VARIETIES",
+              title: "NORUKKAL VARIETIES",
       image: images.hero,
       baseIngredients: ["Crushed Savory Snacks (Papdi)", "Tangy Red Chutney", "Chopped Onion", "Fresh Coriander", "Special Chaat Masala"],
       items: [
@@ -119,7 +118,7 @@ export default function MenuSection({ images }) {
               {categories.map((category, catIdx) => (
                 <motion.div 
                   key={catIdx} 
-                  className="min-w-[320px] md:min-w-[400px] bg-white rounded-3xl p-6 shadow-md border border-gray-100 flex-shrink-0 flex flex-col h-[500px]"
+                  className="min-w-[min(86vw,320px)] md:min-w-[400px] bg-white rounded-3xl p-4 sm:p-6 shadow-md border border-gray-100 flex-shrink-0 flex flex-col h-[500px]"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >

@@ -1,11 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useCart } from "../context/CartContext";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { itemCount, toggleCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +20,10 @@ export default function Header() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Menu", href: "#menu" },
-    { name: "Specials", href: "#specials" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Products", href: "#products" },
+    { name: "Why Porimix", href: "#why-porimix" },
     { name: "Location", href: "#location" },
+    { name: "Franchise", href: "#franchise" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -38,38 +36,26 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        {/* Logo */}
         <a href="#home" className="flex items-center">
-          <img src="/images/logo.png" alt="Porimix Logo" className="h-12 md:h-14 w-auto object-contain" />
+          <img src="/images/logo.jpeg" alt="Porimix Logo" className="h-12 md:h-14 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 items-center">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-brand-dark font-medium hover:text-brand-orange transition-colors"
+              className="text-brand-dark font-black uppercase text-sm hover:text-brand-red transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <button
-            onClick={toggleCart}
-            className="relative bg-brand-light hover:bg-brand-yellow text-brand-dark p-2.5 rounded-full transition-colors flex items-center justify-center shadow-sm"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            {itemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                {itemCount}
-              </span>
-            )}
-          </button>
           <a
             href="https://wa.me/917010760433?text=Hi%20Porimix!%20I%20would%20like%20to%20place%20an%20order.%20Please%20share%20today's%20available%20menu."
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-orange hover:bg-brand-red text-white px-5 py-2 rounded-full font-bold transition-transform transform hover:scale-105 shadow-sm"
+            className="bg-brand-red hover:bg-brand-dark text-white px-5 py-3 font-black uppercase text-sm transition-colors shadow-sm"
           >
             Order on WhatsApp
           </a>
@@ -77,18 +63,6 @@ export default function Header() {
 
         {/* Mobile Buttons */}
         <div className="md:hidden flex items-center gap-4">
-          <button
-            onClick={toggleCart}
-            className="relative bg-brand-light text-brand-dark p-2 rounded-full shadow-sm"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            {itemCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                {itemCount}
-              </span>
-            )}
-          </button>
-          
           <button
             className="text-brand-dark hover:text-brand-orange focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -113,12 +87,12 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full flex flex-col py-4 px-6 space-y-4">
+        <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full max-h-[calc(100vh-5rem)] overflow-y-auto flex flex-col py-4 px-6 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-lg font-medium text-brand-dark hover:text-brand-orange"
+              className="text-lg font-black uppercase text-brand-dark hover:text-brand-red"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}

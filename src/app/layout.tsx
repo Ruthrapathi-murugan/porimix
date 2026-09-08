@@ -10,9 +10,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Porimix Palani | Masal Pori, Murukku Settu & Snacks",
-  description: "Visit Porimix in Palani for fresh Masal Pori, Murukku Settu, Tattu Murukku, Norukkal, Egg, Paneer and Cheese snack varieties. Call or WhatsApp 07010760433.",
-  keywords: "Porimix Palani, Pori Mix Palani, Masal Pori Palani, Murukku Settu Palani, Tattu Murukku Palani, Norukkal Palani, Street Food Palani, Snacks in Palani, Best snacks in Palani, Chaat shop Palani",
+  title: "Porimix Palani | Fresh Masal Pori & Street Snacks",
+  description: "Visit Porimix in Palani for fresh Masal Pori, Murukku Settu, Tattu Murukku, Norukkal and delicious snack varieties.",
+  keywords: "Porimix Palani, Masal Pori Palani, Murukku Settu Palani, Tattu Murukku Palani, Norukkal Palani, street food Palani",
 };
 
 export default function RootLayout({

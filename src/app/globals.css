@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-yellow: #facc15; /* Tailwind yellow-400 */
-  --color-brand-orange: #f97316; /* Tailwind orange-500 */
-  --color-brand-red: #ef4444;    /* Tailwind red-500 */
-  --color-brand-dark: #1f2937;   /* Tailwind gray-800 */
-  --color-brand-light: #fffbeb;  /* Tailwind amber-50 */
+  --color-brand-yellow: #ffd21f;
+  --color-brand-orange: #f15a24;
+  --color-brand-red: #e21d2d;
+  --color-brand-green: #159947;
+  --color-brand-dark: #181818;
+  --color-brand-light: #fff8e5;
   
-  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-outfit), ui-sans-serif, sans-serif;
 }
 
 :root {
-  --background: #fffbeb;
-  --foreground: #1f2937;
+  --background: #fff8e5;
+  --foreground: #181818;
 }
 
 body {
@@ -20,6 +21,207 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   scroll-behavior: smooth;
+  background-image: radial-gradient(#e21d2d16 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+section {
+  animation: section-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 28%;
+}
+
+#location {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#location::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  background: linear-gradient(90deg, var(--color-brand-red), var(--color-brand-orange), var(--color-brand-yellow));
+  z-index: -1;
+}
+
+#location > div > div:nth-child(2) > div {
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 8px 8px 0 var(--color-brand-dark);
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+#location > div > div:nth-child(2) > div:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 12px 14px 0 var(--color-brand-red);
+  background-color: #fff3c4;
+}
+
+#location > div > div:nth-child(2) > div:nth-child(2) {
+  transition-delay: 80ms;
+}
+
+#location > div > div:nth-child(2) > div:nth-child(3) {
+  transition-delay: 160ms;
+}
+
+#location iframe {
+  border-radius: 20px;
+  filter: saturate(0.8) contrast(1.05);
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+#location iframe:hover {
+  filter: saturate(1) contrast(1.05);
+}
+
+@media (max-width: 767px) {
+  #location {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  #location > div > div:nth-child(2) {
+    gap: 1.25rem;
+  }
+
+  #location > div > div:nth-child(2) > div {
+    padding: 1.5rem;
+    box-shadow: 5px 5px 0 var(--color-brand-dark);
+  }
+
+  #location > div > div:nth-child(2) > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 7px 8px 0 var(--color-brand-red);
+  }
+
+  #location iframe {
+    height: 300px;
+  }
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+button:hover,
+a.bg-brand-red:hover,
+a.bg-brand-yellow:hover,
+form button:hover {
+  transform: translateY(-3px);
+}
+
+button:active,
+a:active {
+  transform: translateY(0) scale(0.98);
+}
+
+img {
+  transition: transform 500ms ease, filter 300ms ease;
+}
+
+img:hover {
+  filter: saturate(1.08) contrast(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-display {
+    letter-spacing: -0.03em;
+  }
+}
+
+::selection {
+  background: var(--color-brand-yellow);
+  color: var(--color-brand-dark);
+}
+
+.brand-display {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+.brand-sticker {
+  border: 3px solid var(--color-brand-dark);
+  box-shadow: 5px 5px 0 var(--color-brand-dark);
+}
+
+img[src="/images/founder-vigneshwaran.jpg"] {
+  border-radius: 9999px;
+}
+
+#about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) {
+  position: relative;
+  border-radius: 28px;
+  box-shadow: 0 20px 45px rgba(24, 24, 24, 0.14);
+  border: 1px solid #e5e5e5;
+}
+
+#about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) > div:last-child::before {
+  content: "Message from the CEO";
+  display: block;
+  margin: 0;
+  color: var(--color-brand-dark);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  padding-bottom: 16px;
+  border-bottom: 5px solid var(--color-brand-red);
+  width: fit-content;
+}
+
+#about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) > div:first-child {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  background: transparent;
+}
+
+#about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) > div:last-child > p:first-child {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) > div:last-child::before {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    width: auto;
+    padding-bottom: 12px;
+  }
+
+  #about div:has(> div > img[src="/images/founder-vigneshwaran.jpg"]) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Custom scrollbar */
@@ -27,12 +229,12 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #fffbeb;
+  background: #fff8e5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #facc15;
+  background: #e21d2d;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f97316;
+  background: #f15a24;
 }
