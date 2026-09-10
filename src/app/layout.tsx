@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: "Porimix Palani | Fresh Masal Pori & Street Snacks",
+    description: "Fresh, spicy and crunchy street snacks from Porimix in Palani.",
+    url: "/",
+    siteName: "D Porimix",
+    locale: "en_IN",
+    type: "website",
+    images: [{ url: "/images/logo.jpeg", width: 1600, height: 516, alt: "D Porimix logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Porimix Palani | Fresh Masal Pori & Street Snacks",
+    description: "Fresh, spicy and crunchy street snacks from Porimix in Palani.",
+    images: ["/images/logo.jpeg"],
+  },
 };
 
 export default function RootLayout({
