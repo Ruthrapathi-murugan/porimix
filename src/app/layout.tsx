@@ -12,9 +12,9 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dporimix.com"),
-  title: "D Porimix | Fresh Masal Pori & Snacks",
-  description: "Visit D Porimix in Palani for fresh Masal Pori, Murukku Settu, Tattu Murukku, Norukkal and delicious snack varieties.",
-  keywords: "D Porimix, D Porimix Palani, Masal Pori Palani, Murukku Settu Palani, Tattu Murukku Palani, Norukkal Palani, street food Palani",
+  title: "Porimix Palani | Fresh Masal Pori",
+  description: "Porimix brings Palani a delicious selection of freshly prepared snacks, mixed with bold masala and plenty of crunch.",
+  keywords: "D Porimix, D Porimix Palani, Porimix Palani, Masal Pori Palani, Murukku Settu Palani, Tattu Murukku Palani, Norukkal Palani",
   alternates: {
     canonical: "/",
   },
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "D Porimix | Fresh Masal Pori & Snacks",
-    description: "Fresh, spicy and crunchy snacks from D Porimix in Palani.",
+    title: "Porimix Palani | Fresh Masal Pori",
+    description: "Porimix brings Palani a delicious selection of freshly prepared snacks, mixed with bold masala and plenty of crunch.",
     url: "https://dporimix.com/",
     siteName: "D Porimix",
     locale: "en_IN",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "D Porimix | Fresh Masal Pori & Snacks",
-    description: "Fresh, spicy and crunchy snacks from D Porimix in Palani.",
+    title: "Porimix Palani | Fresh Masal Pori",
+    description: "Porimix brings Palani a delicious selection of freshly prepared snacks, mixed with bold masala and plenty of crunch.",
     images: ["/images/logo.jpeg"],
   },
 };
