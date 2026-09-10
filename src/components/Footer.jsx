@@ -1,4 +1,12 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Footer() {
+  const pathname = usePathname();
+  const homePrefix = pathname === "/" ? "" : "/";
+
   return (
     <footer className="bg-brand-dark text-white py-12 pt-16 mt-20 relative overflow-hidden" id="contact">
       {/* Decorative top border */}
@@ -8,9 +16,9 @@ export default function Footer() {
         
         {/* Brand Info */}
         <div className="flex flex-col space-y-4">
-          <a href="#home" className="flex items-center">
+          <Link href={`${homePrefix}#home`} className="flex items-center">
             <img src="/images/logo.jpeg" alt="Porimix Logo" className="h-16 md:h-20 w-auto object-contain" />
-          </a>
+          </Link>
           <p className="text-gray-400 max-w-sm">
             Palani&apos;s home for fresh, spicy and crunchy street snacks made to order.
           </p>
@@ -20,7 +28,7 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-bold mb-4 text-brand-yellow">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#location" className="text-gray-400 hover:text-white transition-colors">Visit Us</a></li>
+            <li><Link href={`${homePrefix}#location`} className="text-gray-400 hover:text-white transition-colors">Visit Us</Link></li>
           </ul>
         </div>
 

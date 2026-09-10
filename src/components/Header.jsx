@@ -1,7 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+  const homePrefix = pathname === "/" ? "" : "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -18,13 +22,13 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "Why Porimix", href: "#why-porimix" },
-    { name: "Location", href: "#location" },
-    { name: "Franchise", href: "#franchise" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: `${homePrefix}#home` },
+    { name: "About", href: `${homePrefix}#about` },
+    { name: "Products", href: `${homePrefix}#products` },
+    { name: "Why Porimix", href: `${homePrefix}#why-porimix` },
+    { name: "Location", href: `${homePrefix}#location` },
+    { name: "Franchise", href: `${homePrefix}#franchise` },
+    { name: "Contact", href: `${homePrefix}#contact` },
   ];
 
   return (
@@ -36,20 +40,20 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <a href="#home" className="flex items-center">
+        <Link href={`${homePrefix}#home`} className="flex items-center">
           <img src="/images/logo.jpeg" alt="Porimix Logo" className="h-12 md:h-14 w-auto object-contain" />
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-4 lg:gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="text-brand-dark font-black uppercase text-sm hover:text-brand-red transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <a
             href="https://wa.me/917010760433?text=Hi%20Porimix!%20I%20would%20like%20to%20place%20an%20order.%20Please%20share%20today's%20available%20menu."
@@ -89,14 +93,14 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full max-h-[calc(100vh-5rem)] overflow-y-auto flex flex-col py-4 px-6 space-y-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="text-lg font-black uppercase text-brand-dark hover:text-brand-red"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}
