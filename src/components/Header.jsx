@@ -41,7 +41,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link href={`${homePrefix}#home`} className="flex items-center">
-          <img src="/images/logo.jpeg" alt="Porimix Logo" className="h-12 md:h-14 w-auto object-contain" />
+          <img src="/images/logo.jpeg" alt="D Porimix logo" className="h-12 md:h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}

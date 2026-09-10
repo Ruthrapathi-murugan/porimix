@@ -4,6 +4,14 @@ import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import FormsparkForm from "../components/FormsparkForm";
 import Link from "next/link";
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "D Porimix",
+  alternateName: "D PORIMIX",
+  url: "https://dporimix.com/",
+};
+
 export default function Home() {
   const images = {
     hero: "/images/hero_pori_mix_1785477441477.png",
@@ -17,11 +25,15 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden bg-brand-light">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <Header />
       <section id="home" className="relative bg-brand-yellow pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 z-0"><div className="absolute inset-0 bg-brand-yellow/65 z-10" /><img src={images.heroCover} alt="D Porimix snacks" className="w-full h-full object-cover opacity-60 mix-blend-screen" /></div>
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
-          <div><p className="inline-flex bg-brand-yellow text-brand-dark px-4 py-2 font-black uppercase tracking-[.2em] text-xs brand-sticker">Palani&apos;s favourite snack stop</p><h1 className="mt-7 mb-7"><img src="/images/logo.jpeg" alt="Porimix" className="w-full max-w-[620px] bg-brand-yellow" /></h1><p className="max-w-xl text-xl md:text-2xl text-red-600 font-bold leading-tight mb-9">Fresh, spicy, crunchy and mixed just the way you like it.</p><div className="flex flex-wrap gap-4"><a href="#menu" className="bg-brand-yellow text-brand-dark hover:bg-white px-7 py-4 font-black uppercase tracking-wide transition-transform hover:-translate-y-1 brand-sticker">Explore menu</a><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-brand-red px-7 py-4 font-black uppercase tracking-wide transition-colors">Order now</a></div></div>
+          <div><p className="inline-flex bg-brand-yellow text-brand-dark px-4 py-2 font-black uppercase tracking-[.2em] text-xs brand-sticker">Palani&apos;s favourite snack stop</p><h1 className="mt-7 mb-7"><span className="block text-4xl md:text-5xl font-black text-brand-dark mb-3">D Porimix</span><img src="/images/logo.jpeg" alt="D Porimix" className="w-full max-w-[620px] bg-brand-yellow" /></h1><p className="max-w-xl text-xl md:text-2xl text-red-600 font-bold leading-tight mb-9">Fresh, spicy, crunchy and mixed just the way you like it.</p><div className="flex flex-wrap gap-4"><a href="#menu" className="bg-brand-yellow text-brand-dark hover:bg-white px-7 py-4 font-black uppercase tracking-wide transition-transform hover:-translate-y-1 brand-sticker">Explore menu</a><a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-brand-red px-7 py-4 font-black uppercase tracking-wide transition-colors">Order now</a></div></div>
           <div className="relative hidden lg:block"><div className="absolute -top-12 -right-3 bg-brand-yellow text-brand-dark w-32 h-32 rounded-full flex items-center justify-center text-center font-black uppercase leading-none rotate-12 brand-sticker">Fresh<br />&amp;<br />crunchy</div><img src={images.heroImage} alt="D Porimix signature snack" className="w-full aspect-square object-cover border-[10px] border-white shadow-[14px_14px_0_#181818] rotate-3" /></div>
         </div>
       </section>
@@ -29,8 +41,8 @@ export default function Home() {
       <section id="about" className="py-20 bg-brand-red text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[.8fr_1.2fr] gap-12 items-start">
-            <div><p className="text-white font-black uppercase tracking-[.25em] text-sm mb-4">About Porimix</p><h2 className="brand-display text-5xl md:text-7xl text-white">Our<br />History</h2></div>
-            <div className="text-lg md:text-xl leading-relaxed max-w-3xl space-y-5"><p className="font-bold">D PORIMIX was born from a vision in 2011 — a vision to create quality food products with great taste, consistency, and trust.</p><p>Over the years, this vision continued to grow through experience, ideas, and dedication. On 7th November 2024, the vision was officially brought to life, marking the beginning of the D PORIMIX journey.</p><p>Since then, we have been committed to delivering quality products while continuously improving and innovating to meet the expectations of our customers.</p><p>Today, D PORIMIX moves forward with a clear vision to grow into a trusted and recognized food brand, while staying true to the values on which the journey began.</p></div>
+            <div><p className="text-white font-black uppercase tracking-[.25em] text-sm mb-4">About D Porimix</p><h2 className="brand-display text-5xl md:text-7xl text-white">Our<br />History</h2></div>
+            <div className="text-lg md:text-xl leading-relaxed max-w-3xl space-y-5"><p className="font-bold">D Porimix was born from a vision in 2011 — a vision to create quality food products with great taste, consistency, and trust.</p><p>Over the years, this vision continued to grow through experience, ideas, and dedication. On 7th November 2024, the vision was officially brought to life, marking the beginning of the D Porimix journey.</p><p>Since then, we have been committed to delivering quality products while continuously improving and innovating to meet the expectations of our customers.</p><p>Today, D Porimix moves forward with a clear vision to grow into a trusted and recognized food brand, while staying true to the values on which the journey began.</p></div>
           </div>
           <div className="grid md:grid-cols-3 gap-4 mt-14">{[["2011", "The Vision"], ["7th November 2024", "The Beginning"], ["The Future", "Our Journey Continues"]].map(([number, label]) => <div key={label} className="border-t-4 border-white pt-4"><strong className="brand-display text-3xl md:text-4xl block">{number}</strong><span className="font-bold">{label}</span></div>)}</div>
           <div className="mt-16 grid md:grid-cols-[.75fr_1.25fr] gap-8 items-center bg-white p-5 sm:p-8 brand-sticker text-brand-dark"><div className="aspect-square max-w-sm w-full mx-auto overflow-hidden border-4 border-brand-dark bg-brand-light"><img src="/images/founder-vigneshwaran.jpg" alt="Vigneshwaran B, Founder and CEO of Porimix" className="w-full h-full object-cover" /></div><div><p className="text-brand-red font-black uppercase tracking-[.25em] text-sm mb-3">Meet the founder</p><h3 className="brand-display text-4xl md:text-6xl text-brand-dark mb-4">Vigneshwaran B</h3><p className="text-brand-red font-black uppercase tracking-wide mb-5">Founder &amp; CEO</p><p className="text-lg md:text-xl leading-relaxed text-gray-700">With a passion for bold local flavours and a vision to make every snack memorable, Vigneshwaran B leads Porimix with freshness, creativity and a deep love for Palani&apos;s food culture.</p></div></div>
@@ -48,7 +60,7 @@ export default function Home() {
           <div>
             <p className="text-brand-yellow font-black uppercase tracking-[.25em] text-sm mb-4">Grow with Porimix</p>
             <h2 className="brand-display text-5xl md:text-7xl mb-6">Bring the<br /><span className="text-brand-yellow">crunch</span><br />to your city.</h2>
-            <p className="text-lg md:text-xl font-medium leading-relaxed max-w-lg">Join Porimix and bring fresh, spicy street snacks to more food lovers. Tell us about yourself and our team will get in touch.</p>
+            <p className="text-lg md:text-xl font-medium leading-relaxed max-w-lg">Join Porimix and bring fresh, spicy snacks to more food lovers. Tell us about yourself and our team will get in touch.</p>
             <div className="mt-8 grid grid-cols-2 gap-4 max-w-sm"><div className="border-t-2 border-white/50 pt-3"><strong className="text-2xl font-black block">Fresh</strong><span className="text-sm text-white/75">Daily snack culture</span></div><div className="border-t-2 border-white/50 pt-3"><strong className="text-2xl font-black block">Local</strong><span className="text-sm text-white/75">Built for your market</span></div></div>
           </div>
           <FormsparkForm formId="franchise" className="bg-white text-brand-dark p-5 sm:p-8 md:p-10 brand-sticker grid grid-cols-1 sm:grid-cols-2 gap-4">

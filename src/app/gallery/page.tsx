@@ -16,8 +16,8 @@ const galleryPhotos = [
 ];
 
 export const metadata: Metadata = {
-  title: "Porimix Gallery | Fresh Street Snacks in Palani",
-  description: "Explore the Porimix gallery featuring our fresh, spicy, crunchy street snacks from Palani.",
+  title: "D Porimix Gallery | Fresh Snacks in Palani",
+  description: "Explore the D Porimix gallery featuring our fresh, spicy, crunchy snacks from Palani.",
   alternates: {
     canonical: "/gallery",
   },

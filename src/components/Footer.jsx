@@ -17,10 +17,10 @@ export default function Footer() {
         {/* Brand Info */}
         <div className="flex flex-col space-y-4">
           <Link href={`${homePrefix}#home`} className="flex items-center">
-            <img src="/images/logo.jpeg" alt="Porimix Logo" className="h-16 md:h-20 w-auto object-contain" />
+            <img src="/images/logo.jpeg" alt="D Porimix logo" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
           <p className="text-gray-400 max-w-sm">
-            Palani&apos;s home for fresh, spicy and crunchy street snacks made to order.
+            Palani&apos;s home for fresh, spicy and crunchy snacks made to order.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500 pb-16 md:pb-0">
-        <p>&copy; {new Date().getFullYear()} Porimix. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} D Porimix. All rights reserved.</p>
         <p className="mt-2 text-sm">Created by <a href="https://ruthradigitalsolutions.com" target="_blank" rel="noopener noreferrer" className="font-bold text-brand-yellow hover:text-white transition-colors">Ruthra Digital Solutions</a></p>
       </div>
     </footer>
